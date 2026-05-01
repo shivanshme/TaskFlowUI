@@ -1,0 +1,136 @@
+/* Board wrapper */
+.board-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  align-items: flex-start;
+}
+
+/* Each column */
+/* Base column */
+.board-column {
+  min-width: 260px;
+  height: 75vh;
+  border-radius: 14px;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.4s ease;
+}
+.board-column:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* 🎨 Different gradients per column */
+.board-column:nth-child(1) {
+  background: linear-gradient(180deg, #e0f2fe, #f8fafc);
+}
+
+.board-column:nth-child(2) {
+  background: linear-gradient(180deg, #ede9fe, #f8fafc);
+}
+
+.board-column:nth-child(3) {
+  background: linear-gradient(180deg, #fef3c7, #f8fafc);
+}
+
+.board-column:nth-child(4) {
+  background: linear-gradient(180deg, #dcfce7, #f8fafc);
+}
+
+.board-column:nth-child(5) {
+  background: linear-gradient(180deg, #fee2e2, #f8fafc);
+}
+
+/* 🔥 Hover effect */
+.board-column:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Column title */
+.column-title {
+  margin: 15px 0 10px 0;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  text-align: center;
+
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+
+  transition: all 0.2s ease;
+}
+
+/* 🔥 hover text change */
+.board-column:hover .column-title {
+  color: #1d4ed8;
+  letter-spacing: 0.5px;
+}
+
+/* Card container spacing */
+.column-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* Task card */
+.task-card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 13px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+
+  cursor: grab;
+}
+
+.task-card:hover {
+  transform: scale(1.02);
+}
+
+.task-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Priority colors */
+.priority-high {
+  border-left: 4px solid #ef4444;
+}
+
+.priority-medium {
+  border-left: 4px solid #f59e0b;
+}
+
+.priority-low {
+  border-left: 4px solid #22c55e;
+}
+.empty-text {
+  font-size: 13px;
+  opacity: 0.6;
+  font-style: italic;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
